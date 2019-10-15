@@ -3,7 +3,7 @@ val CirceVersion      = "0.12.2"
 val PostgreSQLVersion = "42.2.8"
 val QuillVersion      = "3.4.10"
 val FlywayVersion     = "6.0.6"
-val ChimneyVersion    = "0.3.2"
+val ChimneyVersion    = "0.3.3"
 val LogbackVersion    = "1.2.3"
 val Specs2Version     = "4.7.1"
 

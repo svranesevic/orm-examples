@@ -7,9 +7,7 @@ trait OrdersRepository[F[_]] {
 
   def create(order: Order): F[Order]
   def find(id: Long): F[Option[Order]]
-
   def update(order: Order): F[Unit]
-
   def delete(order: Order): F[Unit]
 }
 

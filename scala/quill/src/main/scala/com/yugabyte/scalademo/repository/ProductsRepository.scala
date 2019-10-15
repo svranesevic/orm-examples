@@ -6,11 +6,8 @@ import com.yugabyte.scalademo.entity.Product
 trait ProductsRepository[F[_]] {
 
   def create(product: Product): F[Product]
-
   def find(id: Long): F[Option[Product]]
-
   def update(product: Product): F[Unit]
-
   def delete(product: Product): F[Unit]
 }
 

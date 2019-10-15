@@ -6,13 +6,9 @@ import com.yugabyte.scalademo.entity.User
 trait UsersRepository[F[_]] {
 
   def create(user: User): F[User]
-
   def find(id: Long): F[Option[User]]
-
   def all(): F[List[User]]
-
   def update(user: User): F[Unit]
-
   def delete(id: Long): F[Unit]
 }
 

@@ -13,11 +13,8 @@ trait User[F[_]] {
   import User._
 
   def create(createUserDto: CreateUserDto): F[UserDto]
-
   def findById(id: Long): F[Option[UserDto]]
-
   def all: F[AllUsersDto]
-
   def delete(id: Long): F[Unit]
 }
 
@@ -26,13 +23,11 @@ object User {
   implicit def apply[F[_]](implicit u: User[F]): User[F] = u
 
   final case class CreateUserDto(firstName: String, lastName: String, email: String)
-
   object CreateUserDto {
     implicit def decoder[F[_]: Sync]: EntityDecoder[F, CreateUserDto] = jsonOf[F, CreateUserDto]
   }
 
   final case class UserDto(userId: Long, firstName: String, lastName: String, email: String)
-
   object UserDto {
     implicit def encoder[F[_]: Sync]: EntityEncoder[F, UserDto] = jsonEncoderOf[F, UserDto]
   }
@@ -44,7 +39,6 @@ object User {
   }
 
   def impl[F[_]: Sync](U: UsersRepository[F]): User[F] = new User[F] {
-
     override def create(createUserDto: CreateUserDto): F[UserDto] = {
       val userEntity =
         createUserDto
