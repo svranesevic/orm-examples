@@ -1,11 +1,12 @@
-val Http4sVersion     = "0.20.11"
-val CirceVersion      = "0.12.2"
-val PostgreSQLVersion = "42.2.8"
-val QuillVersion      = "3.4.10"
-val FlywayVersion     = "6.0.6"
-val ChimneyVersion    = "0.3.3"
-val LogbackVersion    = "1.2.3"
-val Specs2Version     = "4.7.1"
+val Http4sVersion       = "0.20.11"
+val CirceVersion        = "0.12.2"
+val PostgreSQLVersion   = "42.2.8"
+val QuillVersion        = "3.4.10"
+val QuillCodegenVersion = "3.4.10"
+val FlywayVersion       = "6.0.6"
+val ChimneyVersion      = "0.3.3"
+val LogbackVersion      = "1.2.3"
+val Specs2Version       = "4.7.1"
 
 lazy val root = (project in file("."))
   .settings(
@@ -21,6 +22,7 @@ lazy val root = (project in file("."))
       "io.circe"       %% "circe-generic"       % CirceVersion,
       "org.postgresql" % "postgresql"           % PostgreSQLVersion,
       "io.getquill"    %% "quill-jdbc"          % QuillVersion,
+      "io.getquill"    %% "quill-codegen-jdbc"  % QuillCodegenVersion,
       "org.flywaydb"   % "flyway-core"          % FlywayVersion,
       "io.scalaland"   %% "chimney"             % ChimneyVersion,
       "org.specs2"     %% "specs2-core"         % Specs2Version % Test,
